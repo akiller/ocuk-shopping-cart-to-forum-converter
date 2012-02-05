@@ -78,7 +78,7 @@ cartTable.find('tr:gt(0)').not('.basket_option').not('.totalRow').not('#orderTot
 
 	var rowItems = row.children();
 	data.cart_items.push({
-		'image' : rowItems.eq(0).find('img:first').prop('src'),
+		'image' : rowItems.eq(0).find('img:first').prop('src').replace('http://1.2.3.10/bmi/', 'http://'),
 		'desc' : rowItems.eq(1).text(),
 		'configuration' : productConfiguration,
 		'link' : rowItems.eq(1).find('a:first').prop('href'),
