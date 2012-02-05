@@ -132,3 +132,6 @@ if ((OcUKBBGenerator).length) {
 }
 
 $(window).scrollTop(OcUKBBGenerator.position().top)
+
+if (window.clipboardData && window.clipboardData.getData)
+	window.clipboardData.setData("Text", cartBBCode);
