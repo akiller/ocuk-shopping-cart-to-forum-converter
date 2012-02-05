@@ -88,7 +88,7 @@ cartTable.find('tr:gt(0)').not('.basket_option').not('.totalRow').not('#orderTot
 	});
 });
 
-data.shipping_cost = cartTable.find("tr.totalRow:nth-child(2n)").children('td:last').text();
+data.shipping_cost = cartTable.find("tr.totalRow:nth-child(1n)").eq("1").children('td:last').text();
 data.total_cost = cartTable.find("tr#orderTotal").children('td:last').text();
 
 /*
