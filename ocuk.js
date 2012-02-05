@@ -27,6 +27,13 @@ String.prototype.format = String.prototype.f = function() {
 };
 
 /*
+* Sanitise values for BBCode
+*/ 
+String.prototype.sanitiseBBCode = String.prototype.f = function() {
+	return this.replace(/\[/g,'(').replace(/\]/g,')');
+}
+
+/*
 *	Store gathered data as JSON object:
 */
 var data = {
@@ -103,20 +110,20 @@ jQuery.each(data.cart_items, function(i, item) {
 		jQuery.each(item.configuration, function(j, configuration) {
 			if (configuration.type == "complete") {
 				cartContentsConfiguration += "\n[COLOR=\"Wheat\"] - {0} x {1}[/COLOR]  [b][COLOR=\"Yellow\"]{2}[/COLOR][/b]"
-																 .format(configuration.qty, configuration.desc, configuration.price);
+																 .format(configuration.qty.sanitiseBBCode(), configuration.desc.sanitiseBBCode(), configuration.price.sanitiseBBCode());
 			} else {
-				cartContentsConfiguration += "\n[COLOR=\"Wheat\"] - {0}[/COLOR]".format(configuration.desc);
+				cartContentsConfiguration += "\n[COLOR=\"Wheat\"] - {0}[/COLOR]".format(configuration.desc.sanitiseBBCode());
 			}
 		});
 	}
 
 	cartContents += "{0} x [url=\"{1}\"]{2}[/url]  [b][COLOR=\"Yellow\"]{3}[/COLOR][/b]{4}{5}\n"
-								.format(item.qty, item.link, item.desc, item.price, (item.qty > 1 ? " [b][COLOR=\"DarkOrange\"]({0})[/COLOR][/b]".format(item.total) : ""), cartContentsConfiguration);
+								.format(item.qty.sanitiseBBCode(), item.link.sanitiseBBCode(), item.desc.sanitiseBBCode(), item.price.sanitiseBBCode(), (item.qty > 1 ? " [b][COLOR=\"DarkOrange\"]({0})[/COLOR][/b]".format(item.total.sanitiseBBCode()) : ""), cartContentsConfiguration);
 
-	if (item.image) cartContentsFooter += "[url=\"{0}\"][img]{1}[/img][/url] ".format(item.link, item.image);
+	if (item.image) cartContentsFooter += "[url=\"{0}\"][img]{1}[/img][/url] ".format(item.link.sanitiseBBCode(), item.image.sanitiseBBCode());
 });
 
-var cartBBCode = ("[COLOR=\"Yellow\"][b]YOUR BASKET[/b][/COLOR]\n{0}[b]Total : [COLOR=\"Yellow\"]{1}[/COLOR][/b] (includes shipping : {2}).\n\n{3}\n").format(cartContents, data.total_cost, data.shipping_cost, cartContentsFooter);
+var cartBBCode = ("[COLOR=\"Yellow\"][b]YOUR BASKET[/b][/COLOR]\n{0}[b]Total : [COLOR=\"Yellow\"]{1}[/COLOR][/b] (includes shipping : {2}).\n\n{3}\n").format(cartContents, data.total_cost.sanitiseBBCode(), data.shipping_cost.sanitiseBBCode(), cartContentsFooter);
 
 /*
 *	Display to users (somewhat of a hack thanks to no clipboard support from JavaScript without Flash or Internet Explorer)
