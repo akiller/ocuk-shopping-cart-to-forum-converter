@@ -1,7 +1,7 @@
 /*
 *	Cross-browser Overclockers UK (OcUK) shopping cart to forum BB-Code converter bookmarklet backend
 *	by Andrew Killer <akiller@gmail.com>
-*	http://code.google.com/p/ocuk-shopping-cart-to-forum-converter
+*	https://github.com/akiller/ocuk-shopping-cart-to-forum-converter
 *
 *	Rewrite/pilfer of Oliver UK's OcUK Shopping Cart Viewer (https://chrome.google.com/webstore/detail/empfloiadabicdlgahhamannadefhehj?gl=IN)
 *

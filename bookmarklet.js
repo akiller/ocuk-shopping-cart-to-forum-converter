@@ -1,7 +1,7 @@
 /*
 *	Cross-browser Overclockers UK (OcUK) shopping cart to forum BB-Code converter bookmarklet bootstrapper
 *	by Andrew Killer <akiller@gmail.com>
-*	http://code.google.com/p/ocuk-shopping-cart-to-forum-converter
+*	https://github.com/akiller/ocuk-shopping-cart-to-forum-converter
 *
 *	Rewrite/pilfer of Oliver UK's OcUK Shopping Cart Viewer (https://chrome.google.com/webstore/detail/empfloiadabicdlgahhamannadefhehj?gl=IN)
 *
@@ -16,7 +16,7 @@
     if (typeof (MyLib) == 'undefined') {
         var sources = [
             'https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js',
-            'http://ocuk-shopping-cart-to-forum-converter.googlecode.com/git/ocuk.js'];
+            'https://raw.githubusercontent.com/akiller/ocuk-shopping-cart-to-forum-converter/master/ocuk.js'];
 
         var loadNextScript = function() {
             if (sources.length > 0) {
