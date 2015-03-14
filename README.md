@@ -2,7 +2,7 @@
 
 Drag/drop the following JavaScript code onto your bookmarks toolbar:
 ```javascript
-javascript:(function(){var%20a=function(){};if(typeof%20MyLib=="undefined"){var%20b=["https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js","https://cdn.rawgit.com/akiller/ocuk-shopping-cart-to-forum-converter/master/ocuk.js"];var%20c=function(){if(b.length>0){var%20d=document.createElement("script");d.src=b.shift();document.body.appendChild(d);var%20e=false;d.onload=d.onreadystatechange=function(){if(!e&&(!this.readyState||this.readyState=="loaded"||this.readyState=="complete")){e=true;d.onload=d.onreadystatechange=null;c()}}}else{a()}};c()}else{a()}})()
+javascript:(function(){var%20a=function(){};if(typeof%20MyLib=="undefined"){var%20b=["https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js","https://rawgit.com/akiller/ocuk-shopping-cart-to-forum-converter/master/ocuk.js"];var%20c=function(){if(b.length>0){var%20d=document.createElement("script");d.src=b.shift();document.body.appendChild(d);var%20e=false;d.onload=d.onreadystatechange=function(){if(!e&&(!this.readyState||this.readyState=="loaded"||this.readyState=="complete")){e=true;d.onload=d.onreadystatechange=null;c()}}}else{a()}};c()}else{a()}})()
 ```
 **note: make sure you scroll all the way to the end**
 
